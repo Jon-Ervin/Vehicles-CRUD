@@ -1,0 +1,13 @@
+
+extends ../../../templates/master.pug
+
+block content
+    h1.title List of Cars
+    hr
+    p ID - MAKE - MODEL - YEAR - Plate Number - Condition
+    ul
+    each  vehicle in vehiclestab
+        li= `${vehicle.ID} - ${vehicle.Make} - ${vehicle.Model} - ${vehicle.Year} - ${vehicle.PlateNumber} - ${vehicle.Condition}`
+    hr
+    a(class="button", href="") UPDATE
+    a(class="button", href="/del") DELETE

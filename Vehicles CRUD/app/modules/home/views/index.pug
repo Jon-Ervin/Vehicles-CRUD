@@ -1,0 +1,15 @@
+
+extends ../../../templates/master.pug
+
+block content
+    h1.title Welcome To CAR NETWORK!
+
+    hr
+    ul(style='list-style: none;')
+    p ID - MAKE - MODEL - YEAR
+    ul
+      each vehicle in vehiclestab
+              li= `${vehicle.ID} - ${vehicle.Make} - ${vehicle.Model} - ${vehicle.Year}`
+
+    a(class="button", href="/view") VIEW DETAILS
+    a(class="button", href="/users/new") ADD

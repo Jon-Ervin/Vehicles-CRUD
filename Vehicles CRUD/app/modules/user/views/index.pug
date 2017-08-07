@@ -1,0 +1,30 @@
+
+extends ../../../templates/master.pug
+
+block content
+    form(method="POST" action="/users/new")
+        .field
+            .label ID
+            .control
+                input.input(type="number" placeholder="id" name="id")
+        .field
+            .label Maker
+            .control
+                input.input(type="text" placeholder="make" name="make")
+        .field
+            .label Model
+            .control
+                input.input(type="text" placeholder="model" name="model")
+        .field
+            .label Year
+            .control
+                input.input(type="year" placeholder="year" name="year")
+        .field
+            .label Plate Number
+            .control
+                input.input(type="text" placeholder="platenumber" name="platenumber")
+        .field
+            .label Condition
+            .control
+                input.input(type="text" placeholder="carcondition" name="carcondition")
+        input(type="submit" value="Submit")

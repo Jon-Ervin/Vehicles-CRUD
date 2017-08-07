@@ -1,0 +1,17 @@
+
+extends ../../../templates/master.pug
+
+block content
+    h1.title List of Cars
+    hr
+    p ID - MAKE - MODEL - YEAR - Plate Number - Condition
+    ul
+    each  vehicle in vehiclestab
+        li= `${vehicle.ID} - ${vehicle.Make} - ${vehicle.Model} - ${vehicle.Year} - ${vehicle.PlateNumber} - ${vehicle.Condition}`
+    hr
+    form(method="POST" action="/del")
+        .field
+            .label Enter a Vehicle ID
+            .control
+                input.input(type="number" placeholder="id" name="id")
+        input(type="submit" value="Delete")
