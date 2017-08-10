@@ -1,0 +1,22 @@
+
+extends ../../../templates/master.pug
+
+block content
+    h1.title List of Cars
+    hr
+    p ID - MAKE - MODEL - YEAR - Plate Number - Condition
+    ul
+    each  vehicle in vehiclestab
+        li= `${vehicle.ID} - ${vehicle.Make} - ${vehicle.Model} - ${vehicle.Year} - ${vehicle.PlateNumber} - ${vehicle.Condition}`
+    hr
+    form(method="POST" action="/edit")
+        .field
+            .label Vehicle Record : Match a vehicle with it's ID
+            .control
+                input.input(type="number" placeholder="ID" name="id")
+                input.input(type="text" placeholder="make" name="make")
+                input.input(type="text" placeholder="model" name="model")
+                input.input(type="year" placeholder="year" name="year")
+                input.input(type="text" placeholder="platenumber" name="platenumber")
+                input.input(type="text" placeholder="carcondition" name="carcondition")
+        input(type="submit" value="Submit")

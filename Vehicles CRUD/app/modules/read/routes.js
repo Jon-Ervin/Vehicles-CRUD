@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
         res.render('read/views/index', { vehiclestab: vehiclestab });
     }
 });
-
 router.get('/view', (req, res) => {
     res.render('read/views/index');
 });
